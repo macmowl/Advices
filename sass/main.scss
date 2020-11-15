@@ -1,0 +1,45 @@
+@mixin quote {
+    content: '"';
+    font-size: 15rem;
+    opacity: 0.1;
+    position: absolute;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    font-size: 62.5%;
+    background: #DA4453;
+    background: -webkit-linear-gradient(to right, #89216B, #DA4453);
+    background: linear-gradient(to right, #89216B, #DA4453);
+}
+
+body {
+    display: flex;
+    margin: 50px 48px 0 48px;
+    main {
+        color: white;
+        width: 100%;
+        text-align: left;
+        top: 100px;
+    
+        #advice {
+            opacity: 0.7;
+            font-size: 4rem;
+            position: relative;
+            display: inline-block;
+
+            &::before {
+                @include quote;
+                top: -40px;
+                left: -40px;
+            }
+
+            &::after {
+                @include quote;
+                bottom: -120px;
+                right: 30px;
+            }
+        }
+    }
+}
